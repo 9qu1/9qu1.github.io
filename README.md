@@ -27,6 +27,11 @@ Aレコード4本(GitHub Pages) + `www` のCNAME。
 | A | (空欄) | 185.199.111.153 |
 | CNAME | www | 9qu1.github.io. |
 
+## AdSense
+
+- 審査用スクリプトは `index.html` の `<!-- AdSense: ... -->` コメント位置に貼る(各サイト側は `config/site.json` の `adsenseClient` にIDを入れると全ページの `<head>` に自動挿入される)。
+- `ads.txt` はドメイン直下(= このリポジトリのルート)に置く必要がある。合格後にパブリッシャーIDを記載して追加する。
+
 ## 編集方法
 
 `index.html` を直接編集してpushするだけ(ビルド不要)。
