@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9qu1 — 毎日更新のニュースメディア</title>
+<meta name="description" content="AIニュースを毎朝お届けする「AIデイリー」と、株式市場の動きを1日3回整理する「投資デイリー」。専門用語なしのやさしい言葉で毎日更新しています。">
+<link rel="canonical" href="https://9qu1.com/">
+<meta property="og:title" content="9qu1 — 毎日更新のニュースメディア">
+<meta property="og:description" content="AIニュースと株式市況を、専門用語なしのやさしい言葉で毎日お届けしています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://9qu1.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📰</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text: #1f2126;
+  --text-sub: #747882;
+  --border: #e9eaee;
+  --ai: #5b5fc7;
+  --invest: #2e6e53;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.85;
+  font-size: 16px;
+}
+a { text-decoration: none; color: inherit; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+header { border-bottom: 1px solid var(--border); }
+.brand { display: block; padding: 18px 0; font-size: 19px; font-weight: 700; }
+.hero { padding: 56px 0 8px; }
+.hero h1 { font-size: 27px; margin: 0 0 12px; font-weight: 700; }
+.hero p { color: var(--text-sub); margin: 0; }
+.sites { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 36px 0 10px; }
+.site {
+  display: block; border: 1px solid var(--border); border-radius: 12px;
+  padding: 26px 26px 22px; transition: border-color .15s ease;
+}
+.site:hover { border-color: var(--accent); }
+.site .emoji { font-size: 30px; line-height: 1; }
+.site h2 { font-size: 19px; margin: 12px 0 6px; font-weight: 700; color: var(--accent); }
+.site p { margin: 0 0 14px; font-size: 14px; color: var(--text-sub); }
+.site .go { font-size: 14px; font-weight: 500; color: var(--accent); }
+.site-ai { --accent: var(--ai); }
+.site-invest { --accent: var(--invest); }
+.freq { display: inline-block; font-size: 12px; padding: 2px 10px; border-radius: 999px; background: #f5f5f8; color: var(--text-sub); }
+.about { margin: 48px 0 0; padding-top: 28px; border-top: 1px solid var(--border); }
+.about h3 { font-size: 16px; margin: 0 0 8px; font-weight: 700; }
+.about p { color: var(--text-sub); font-size: 14.5px; margin: 0 0 10px; }
+footer { margin-top: 60px; padding: 26px 0 40px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-sub); }
+footer nav { display: flex; gap: 8px 20px; flex-wrap: wrap; margin-bottom: 10px; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .sites { grid-template-columns: 1fr; }
+  .hero { padding-top: 40px; }
+  .hero h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/">📰 9qu1</a></div></header>
+<main class="wrap">
+  <section class="hero">
+    <h1>毎日更新の、やさしいニュースメディア</h1>
+    <p>むずかしい話題を、専門用語なしの言葉に置きかえてお届けしています。どちらも無料で読めます。</p>
+  </section>
+
+  <div class="sites">
+    <a class="site site-ai" href="/ai-news-daily/">
+      <div class="emoji">🤖</div>
+      <h2>AIデイリー</h2>
+      <p class="freq"><span>毎朝更新</span></p>
+      <p>世界のAIニュースから重要なものを厳選して、5分で読める分量にまとめています。ChatGPT・Claude・Geminiなどの入門ガイドも。</p>
+      <span class="go">記事を読む →</span>
+    </a>
+    <a class="site site-invest" href="/invest-daily/">
+      <div class="emoji">📈</div>
+      <h2>投資デイリー</h2>
+      <p class="freq"><span>1日3回更新</span></p>
+      <p>東京市場と米国市場の動きを、朝・夕・夜の3回お届け。数字の意味がわかる解説つきで、投資入門の記事もあります。</p>
+      <span class="go">記事を読む →</span>
+    </a>
+  </div>
+
+  <section class="about">
+    <h3>このサイトについて</h3>
+    <p>ニュースは「何が起きたか」だけでなく「なぜそれが重要なのか」まで書くことを編集方針にしています。専門用語には必ず短い解説を添え、出典へのリンクを掲載しています。</p>
+    <p>新着記事は <a href="https://bsky.app/profile/ainews1.bsky.social" target="_blank" rel="noopener">Bluesky</a> と <a href="https://www.threads.com/@ainews111" target="_blank" rel="noopener">Threads</a> でもお知らせしています。</p>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/ai-news-daily/about.html">AIデイリーについて</a>
+      <a href="/invest-daily/about.html">投資デイリーについて</a>
+      <a href="/ai-news-daily/privacy.html">プライバシーポリシー</a>
+      <a href="/ai-news-daily/contact.html">お問い合わせ</a>
+    </nav>
+    <p style="margin:0">本サイトはプロモーション(広告・アフィリエイトリンク)を含みます。<br>© 2026 9qu1</p>
+  </div>
+</footer>
+</body>
+</html>
