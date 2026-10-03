@@ -346,19 +346,6 @@ const APPS = [
     links: [{ label: "使ってみる", url: "https://dbd-killer-counter.onrender.com" }],
   },
   {
-    name: "公開スケジュール",
-    category: "tool",
-    emoji: "📅",
-    icon: "img/icons/sharecal.webp",
-    size: "",
-    status: "公開中止中",
-    description:
-      "ログイン不要でみんなの予定を共有できる公開カレンダー。カレンダーごとのパスワードだけで運用できる手軽さが売り。",
-    note: "運用コストが見合わないため公開を見送っています。",
-    tags: ["React", "tRPC", "MySQL"],
-    links: [],
-  },
-  {
     name: "発表順番ジェネレーター",
     category: "tool",
     emoji: "🎤",
