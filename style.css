@@ -14,6 +14,10 @@
   --chip-bg: rgba(20, 24, 34, 0.05);
   --glass: rgba(247, 245, 241, 0.75);
   --radius: 20px;
+  --card-rgb: 255, 255, 255;   /* 背景の画像を覆う色（= --card） */
+  --switch-off: rgba(20, 24, 34, 0.18);
+  --focus: #e5483b;
+  --icon-ring: rgba(20, 24, 34, 0.1);  /* アイコンの画像の縁 */
 }
 
 :root[data-theme="dark"] {
@@ -27,6 +31,10 @@
   --marker: rgba(255, 176, 0, 0.35);
   --chip-bg: rgba(255, 255, 255, 0.07);
   --glass: rgba(18, 22, 30, 0.75);
+  --card-rgb: 27, 34, 45;
+  --switch-off: rgba(255, 255, 255, 0.2);
+  --focus: #ff8f7f;
+  --icon-ring: rgba(255, 255, 255, 0.12);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -147,7 +155,7 @@ body {
 .filters {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 24px 32px;
+  padding: 0 24px 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -180,18 +188,77 @@ body {
   box-shadow: 0 6px 16px rgba(255, 90, 77, 0.35);
 }
 
+/* --- 説明を表示（オン/オフのスイッチ） --- */
+.view-bar {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.desc-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: var(--text-sub);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.desc-switch:hover,
+.desc-switch[aria-checked="true"] { color: var(--text); }
+
+.desc-switch-track {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px; height: 24px;
+  border-radius: 999px;
+  background: var(--switch-off);
+  transition: background 0.25s;
+}
+.desc-switch-track::after {
+  content: "";
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s;
+}
+.desc-switch[aria-checked="true"] .desc-switch-track { background: var(--accent-grad); }
+.desc-switch[aria-checked="true"] .desc-switch-track::after { transform: translateX(16px); }
+
+/* キーボードで動かしたときの枠 */
+.filter-chip:focus-visible,
+.desc-switch:focus-visible,
+.card-link:focus-visible,
+.card-more-btn:focus-visible,
+.theme-toggle:focus-visible,
+.to-top:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 /* ============================================
    ベントーグリッド
    ============================================ */
-/* 1行=2ブロック。カードは全て1ブロックで、
-   size: "wide" を指定したものだけ2ブロック(全幅)になる */
+/* 既定はコンパクトなカード。パソコン3列・タブレット2列・スマホ1列。
+   size: "wide" を指定したものだけ2ブロックになる。
+   同じ行のカードは同じ高さにそろい、縦のすき間は gap だけになる */
 .bento {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 24px 96px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(150px, auto);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-flow: dense;
   gap: 16px;
 }
@@ -201,16 +268,14 @@ body {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 26px;
+  padding: 18px 20px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  /* カードは行の高さまで引き伸ばされる。余った分を1箇所に溜めず
-     各要素の間に均等配分し、不自然な空白が開かないようにする */
-  justify-content: space-between;
   position: relative;
   overflow: hidden;
+  /* 背景の画像と覆いをカードの中に閉じこめる */
+  isolation: isolate;
   transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s, translate 0.5s;
   /* フェードイン初期状態 */
   opacity: 0;
@@ -229,23 +294,92 @@ body {
 
 .card--wide { grid-column: span 2; }
 
-/* 背景の絵(APPS の bg)。右寄せで薄く敷き、文字の多い左側は消していく */
-.card--bg { isolation: isolate; }
-.card--bg::before {
+/* 非表示（フィルター） */
+.card.is-hidden { display: none; }
+
+/* --- 背景の画像（APPS の bg）---
+   サイトの画面はカードの右 64% の枠に敷き、左（文字の側）へ溶かす。
+   bgPos で見せる位置、bgZoom で寄せ（拡大）をカードごとに変えられる。
+   寄せても枠の外へははみ出さない */
+.card-bg {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  z-index: -2;
+  width: 64%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 45%);
+  mask-image: linear-gradient(to right, transparent, #000 45%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  user-select: none;
+}
+.card-bg.is-loaded { opacity: 1; }
+.card-bg-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+:root[data-theme="dark"] .card-bg-img { filter: brightness(0.82) saturate(0.9); }
+/* 画面の明るさ（APPS の bgTone）に合わせて整える（明るい画面 × 明るいサイトの画面はそのまま）。
+   暗い画面 × 白っぽいサイトの画面 … 沈めて、暗いカードの中で白く浮かないように
+   暗い画面 × 暗いサイトの画面     … 沈めない（もともと暗いので、これ以上落とすと見えなくなる）
+   明るい画面 × 暗いサイトの画面   … 右側の白い覆いを薄くして、灰色に濁らせずに澄んだ暗さで見せる */
+:root[data-theme="dark"] .card--bg-light .card-bg-img { filter: brightness(0.45) saturate(0.85); }
+:root[data-theme="dark"] .card--bg-dark .card-bg-img { filter: none; }
+:root:not([data-theme="dark"]) .card--bg-dark {
+  --veil-c: 0.12;
+  --veil-d: 0;
+}
+/* 透明な背景の絵（SVG）は切らずに、少し大きめで右へ寄せる。
+   色の強い線画なので、画面のスクショより控えめに */
+.card-bg--art {
+  top: -9%; right: -28px; bottom: -9%;
+  width: 100%;
+  overflow: visible;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.card-bg--art .card-bg-img {
+  object-fit: contain;
+  object-position: right center;
+}
+.card-bg--art.is-loaded { opacity: 0.45; }
+:root[data-theme="dark"] .card-bg--art.is-loaded { opacity: 0.6; }
+
+.card--bg::before,
+.card--bg::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--card-bg) right -28px center / auto 118% no-repeat;
-  opacity: 0.16;
-  -webkit-mask-image: linear-gradient(100deg, transparent 26%, #000 76%);
-  mask-image: linear-gradient(100deg, transparent 26%, #000 76%);
   pointer-events: none;
 }
-:root[data-theme="dark"] .card--bg::before { opacity: 0.26; }
-
-/* 非表示（フィルター） */
-.card.is-hidden { display: none; }
+.card--bg::before {
+  /* 文字に近いほど濃く覆い、右の端だけ画面をはっきり見せる（濃さは --veil-a〜d で変えられる） */
+  background: linear-gradient(
+    90deg,
+    rgba(var(--card-rgb), var(--veil-a, 0.9)) 0%,
+    rgba(var(--card-rgb), var(--veil-b, 0.75)) 45%,
+    rgba(var(--card-rgb), var(--veil-c, 0.35)) 70%,
+    rgba(var(--card-rgb), var(--veil-d, 0.15)) 100%
+  );
+}
+/* 説明を開いたら全体を覆って文字を読みやすく */
+.card--bg::after {
+  background: rgba(var(--card-rgb), 0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card--bg.is-open::after { opacity: 1; }
+/* ライトモードの暗いサイトの画面は、上の覆い（::before）を薄くした分、開いたときにここで補う */
+:root:not([data-theme="dark"]) .card--bg-dark::after { background: rgba(var(--card-rgb), 0.9); }
+/* 画像に重なりやすい名前は、カードの色で縁どる */
+.card--bg .card-title {
+  text-shadow: 0 0 2px rgba(var(--card-rgb), 0.95), 0 0 8px rgba(var(--card-rgb), 0.9);
+}
 
 /* --- カード内部 --- */
 .card-head {
@@ -254,35 +388,74 @@ body {
   gap: 14px;
 }
 
+.card-head-text { min-width: 0; }
+
 .card-icon {
-  width: 52px; height: 52px;
+  position: relative;
+  width: 48px; height: 48px;
   flex-shrink: 0;
-  border-radius: 16px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
-  font-size: 1.6rem;
+  font-size: 1.75rem;  /* 絵文字。下の形だけの画像（32px）と見た目の大きさをそろえる */
+  line-height: 1;
   background: var(--chip-bg);
 }
+/* --- アイコンの画像（APPS の icon。サイトのファビコン）---
+   四角い地のある絵はタイルいっぱいに出し、細い縁で輪郭を出す
+   （白っぽい地は明るい画面で、黒い地は暗い画面でカードに溶けるため） */
+.card-icon--img { background: none; }
+.card-icon-img {
+  display: block;
+  width: 100%; height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+.card-icon--img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--icon-ring);
+  pointer-events: none;
+}
+/* 丸い絵（YouTube のチャンネル）は丸いまま（スマホの角丸の指定にも負けないよう2つ重ねる） */
+.card-icon.card-icon--round { border-radius: 50%; }
+/* 透明な地に形だけの絵は、絵文字と同じくタイルの地の上に一回り小さく置く */
+.card-icon--glyph { background: var(--chip-bg); }
+.card-icon--glyph::after { content: none; }
+.card-icon--glyph .card-icon-img {
+  width: 32px; height: 32px;
+  border-radius: 0;
+  object-fit: contain;
+}
 
+.card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-bottom: 3px;
+}
 
 .card-badge {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
+  line-height: 1.5;
   letter-spacing: 0.08em;
-  padding: 3px 10px;
+  padding: 2px 9px;
   border-radius: 999px;
   color: #fff;
 }
 
 .card-status {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
+  line-height: 1.5;
   letter-spacing: 0.08em;
-  padding: 3px 10px;
+  padding: 1px 8px;
   border-radius: 999px;
-  margin-left: 6px;
   border: 1px solid transparent;
 }
 
@@ -309,15 +482,10 @@ body {
   border-color: var(--border);
 }
 
-.card-note {
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: var(--text-sub);
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: var(--chip-bg);
-  border-left: 3px solid var(--border);
-}
+/* 背景の画像があるカードでは、札の下地を透かさない */
+.card--bg .card-status--wip { background: color-mix(in srgb, rgb(255, 176, 0) 16%, rgb(var(--card-rgb))); }
+.card--bg .card-status--r18 { background: color-mix(in srgb, rgb(244, 63, 94) 14%, rgb(var(--card-rgb))); }
+.card--bg .card-status--muted { background: color-mix(in srgb, var(--text-sub) 12%, rgb(var(--card-rgb))); }
 
 .badge-web       { background: linear-gradient(120deg, #38bdf8, #2563eb); }
 .badge-blog      { background: linear-gradient(120deg, #a78bfa, #7c3aed); }
@@ -328,15 +496,49 @@ body {
 .badge-mobile    { background: linear-gradient(120deg, #f472b6, #ec4899); }
 
 .card-title {
-  font-size: 1.15rem;
+  font-size: 1.04rem;
   font-weight: 700;
   line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
+/* --- 説明・補足・タグ（既定は閉じる。高さ 0fr ⇄ 1fr で開け閉め） --- */
+.card-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.3s ease, visibility 0.3s;
+}
+.card.is-open .card-more {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  /* 開くときはすぐ見せる（閉じるときだけ縮み終わってから隠す） */
+  transition: grid-template-rows 0.3s ease, visibility 0s;
+}
+.card-more-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* 閉じたときに上の余白が残らないよう、余白は中に持たせる */
+.card-more-inner > :first-child { margin-top: 14px; }
 
 .card-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
   color: var(--text-sub);
+}
+
+.card-note {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--chip-bg);
+  border-left: 3px solid var(--border);
 }
 
 .card-tags {
@@ -354,32 +556,47 @@ body {
   color: var(--text-sub);
 }
 
-/* 無料枠のスリープ復帰待ちを事前に伝える一文 */
-.card-wake {
-  font-size: 0.75rem;
-  line-height: 1.6;
-  color: var(--text-sub);
-  opacity: 0.85;
+/* --- 下の段（起動待ちの一文・リンク・くわしく）。カードの底にそろえる --- */
+.card-foot {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+
+/* 無料枠のスリープ復帰待ちを事前に伝える一文（小さな札にして画像の上でも読める） */
+.card-wake {
+  align-self: flex-start;
+  max-width: 100%;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--text-sub);
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+}
+.card--bg .card-wake { background: rgba(var(--card-rgb), 0.88); }
 
 .card-wake::before {
   content: "⏳ ";
 }
 
-.card-links {
+.card-actions {
   display: flex;
-  gap: 10px;
+  align-items: center;
   flex-wrap: wrap;
-  padding-top: 4px;
+  gap: 8px;
 }
 
 .card-link {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  line-height: 1.4;
   text-decoration: none;
   color: #fff;
   background: var(--accent-grad);
-  padding: 8px 18px;
+  padding: 7px 16px;
   border-radius: 999px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -395,6 +612,32 @@ body {
   border: 1px solid var(--border);
 }
 .card-link--ghost:hover { box-shadow: var(--shadow-hover); }
+
+/* そのカードだけ説明を開く */
+.card-more-btn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  /* 背景の画像の上でも読めるよう、カードの色を敷く */
+  background: rgba(var(--card-rgb), 0.85);
+  color: var(--text-sub);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.card-more-btn:hover {
+  color: var(--text);
+  border-color: var(--text-sub);
+}
+.card-more-chev { transition: transform 0.25s; }
+.card-more-btn[aria-expanded="true"] .card-more-chev { transform: rotate(180deg); }
 
 /* --- 統計タイル --- */
 .card--stats {
@@ -412,14 +655,14 @@ body {
 }
 
 .stat-num {
-  font-size: 2.4rem;
+  font-size: 2.1rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   opacity: 0.9;
   letter-spacing: 0.05em;
@@ -482,10 +725,20 @@ body {
 /* ============================================
    レスポンシブ
    ============================================ */
+/* タブレットは2列 */
+@media (max-width: 960px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 620px) {
   /* スマホは1列。全カードが同じ幅になる */
-  .bento { grid-template-columns: 1fr; gap: 14px; }
+  .bento { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .card, .card--wide { grid-column: span 1; }
+  .card { padding: 16px 18px; }
+  .card-icon { width: 44px; height: 44px; border-radius: 13px; font-size: 1.6rem; }
+  .card-icon--glyph .card-icon-img { width: 29px; height: 29px; }
+  .card-foot { padding-top: 12px; }
+  .view-bar { padding-bottom: 22px; }
   .hero { padding-top: 56px; }
   .sp-only { display: inline; }
 }
@@ -493,6 +746,8 @@ body {
 /* アニメーションを減らす設定のユーザーへ配慮 */
 @media (prefers-reduced-motion: reduce) {
   .card { opacity: 1; translate: none; transition: none; }
+  .card-more, .card.is-open .card-more, .card-bg, .card--bg::after, .card-more-chev,
+  .desc-switch-track, .desc-switch-track::after { transition: none; }
   html { scroll-behavior: auto; }
 }
 

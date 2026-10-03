@@ -66,6 +66,14 @@
     <button class="filter-chip" data-filter="mobile">iOS / Android</button>
   </nav>
 
+  <!-- 表示の切り替え（オンで全カードの説明・補足・タグを出す） -->
+  <div class="view-bar">
+    <button type="button" class="desc-switch" id="descToggle" role="switch" aria-checked="false">
+      <span class="desc-switch-track" aria-hidden="true"></span>
+      <span>説明を表示</span>
+    </button>
+  </div>
+
   <!-- ベントーグリッド -->
   <section class="bento" id="bentoGrid" aria-label="アプリ一覧"></section>
 </main>
