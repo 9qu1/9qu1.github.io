@@ -31,6 +31,7 @@ const APPS = [
     name: "くぁくぁの予定",
     category: "web",
     emoji: "🗓️",
+    icon: "img/icons/schedule.webp",
     size: "featured",
     description:
       "くぁくぁのこれからの予定を、一覧・月・週で見られる予定表。予定を押すと時間や説明も見られる。",
