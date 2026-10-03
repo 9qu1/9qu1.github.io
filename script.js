@@ -5,7 +5,7 @@
    ■ 並び順  … 新しく作ったものが上。追加するときは配列の先頭に足す
    ■ カード幅 … 全カード1ブロックで統一。
                 特定のアプリだけ目立たせたいときは size: "wide" で2ブロックにできる
-   ■ category … "web" | "blog" | "discord" | "tool" | "extension" | "mobile"
+   ■ category … "web" | "blog" | "video" | "discord" | "tool" | "extension" | "mobile"
    ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中"(省略可)
    ■ note     … 補足の一文(省略可)
    ■ slowStart… true でRender無料枠の起動待ちの注意書きを表示
@@ -179,6 +179,26 @@ const APPS = [
       "ペットの写真を投稿して交流するSNSアプリ。ペット登録(年齢自動計算)、タグ検索、いいね・なでなで機能つき。iOS/Android両対応でストア公開準備中。",
     tags: ["Expo", "React Native", "Firebase"],
     links: [],
+  },
+  {
+    name: "ずんだ雑学ラボ（YouTube）",
+    category: "video",
+    emoji: "🎬",
+    size: "",
+    description:
+      "日常の「なぜ」を心理学や行動経済学でほどく雑学チャンネル。ずんだもんが解説するショートと長めの回を毎日公開している。台本づくりから書き出し・投稿まで自動で回している。",
+    tags: ["Remotion", "VOICEVOX", "動画の自動生成"],
+    links: [{ label: "チャンネルを見る", url: "https://www.youtube.com/@zundamonn_zatsugaku" }],
+  },
+  {
+    name: "リカイド公式チャンネル",
+    category: "video",
+    emoji: "📺",
+    size: "",
+    description:
+      "理解度チェック「リカイド」の公式チャンネル。遊び方や仕組みを説明する動画を、日本語・英語・韓国語・繁体字の音声つきで公開している。",
+    tags: ["Remotion", "多言語の音声"],
+    links: [{ label: "チャンネルを見る", url: "https://www.youtube.com/@rikaido_official" }],
   },
   {
     name: "AIデイリー",
@@ -414,6 +434,7 @@ const STATUS_TONES = {
 const CATEGORY_LABELS = {
   web: "WEB APP",
   blog: "BLOG",
+  video: "YOUTUBE",
   discord: "DISCORD BOT",
   tool: "TOOL",
   extension: "Chrome拡張機能",
