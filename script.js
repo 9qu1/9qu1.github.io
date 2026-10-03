@@ -42,7 +42,7 @@ const APPS = [
   /* ---------- 2026年10月 ---------- */
   {
     name: "アマヤドリ",
-    category: "tool",
+    category: "service",
     emoji: "🌧️",
     icon: "img/icons/amayadori.webp",
     iconShape: "glyph",
