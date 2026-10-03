@@ -5,7 +5,7 @@
    ■ 並び順  … 新しく作ったものが上。追加するときは配列の先頭に足す
    ■ カード幅 … 全カード1ブロックで統一。
                 特定のアプリだけ目立たせたいときは size: "wide" で2ブロックにできる
-   ■ category … "web" | "discord" | "tool" | "extension" | "mobile"
+   ■ category … "web" | "blog" | "discord" | "tool" | "extension" | "mobile"
    ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中"(省略可)
    ■ note     … 補足の一文(省略可)
    ■ slowStart… true でRender無料枠の起動待ちの注意書きを表示
@@ -117,7 +117,7 @@ const APPS = [
   },
   {
     name: "ずんだ雑学ラボ",
-    category: "web",
+    category: "blog",
     emoji: "🧪",
     size: "",
     description:
@@ -172,7 +172,7 @@ const APPS = [
   },
   {
     name: "AIデイリー",
-    category: "web",
+    category: "blog",
     emoji: "📰",
     size: "",
     description:
@@ -182,7 +182,7 @@ const APPS = [
   },
   {
     name: "投資デイリー",
-    category: "web",
+    category: "blog",
     emoji: "📈",
     size: "",
     description:
@@ -403,6 +403,7 @@ const STATUS_TONES = {
 
 const CATEGORY_LABELS = {
   web: "WEB APP",
+  blog: "BLOG",
   discord: "DISCORD BOT",
   tool: "TOOL",
   extension: "Chrome拡張機能",
