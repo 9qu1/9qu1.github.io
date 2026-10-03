@@ -5,7 +5,7 @@
    ■ 並び順  … 新しく作ったものが上。追加するときは配列の先頭に足す
    ■ カード幅 … 全カード1ブロックで統一。
                 特定のアプリだけ目立たせたいときは size: "wide" で2ブロックにできる
-   ■ category … "service" | "web" | "blog" | "video" | "discord" | "tool" | "extension"
+   ■ category … "service" | "game" | "shindan" | "tool" | "blog" | "video" | "discord" | "extension"
    ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中"(省略可)
    ■ note     … 補足の一文(省略可)
    ■ slowStart… true でRender無料枠の起動待ちの注意書きを表示
@@ -29,7 +29,7 @@ const APPS = [
   /* ---------- いちばん上に固定（size: "featured" = 件数のタイルより上・横いっぱい・枠に色。style.css の最後） ---------- */
   {
     name: "くぁくぁの予定",
-    category: "web",
+    category: "tool",
     emoji: "🗓️",
     icon: "img/icons/schedule.webp",
     size: "featured",
@@ -42,7 +42,7 @@ const APPS = [
   /* ---------- 2026年10月 ---------- */
   {
     name: "アマヤドリ",
-    category: "web",
+    category: "tool",
     emoji: "🌧️",
     icon: "img/icons/amayadori.webp",
     iconShape: "glyph",
@@ -98,7 +98,7 @@ const APPS = [
   },
   {
     name: "スキャナン",
-    category: "web",
+    category: "game",
     emoji: "🔍",
     icon: "img/icons/scanan.webp",
     size: "",
@@ -114,7 +114,7 @@ const APPS = [
   /* ---------- 2026年8月 ---------- */
   {
     name: "100ピタッ‼︎",
-    category: "web",
+    category: "game",
     emoji: "💯",
     icon: "img/icons/pita100.webp",
     iconShape: "glyph",
@@ -129,7 +129,7 @@ const APPS = [
   },
   {
     name: "コトバト",
-    category: "web",
+    category: "game",
     emoji: "🥊",
     icon: "img/icons/kotobato.webp",
     iconShape: "glyph",
@@ -144,7 +144,7 @@ const APPS = [
   },
   {
     name: "探索者メーカー",
-    category: "web",
+    category: "tool",
     emoji: "🎲",
     size: "",
     bg: "img/bg/cocmaker.webp",
@@ -158,7 +158,7 @@ const APPS = [
   },
   {
     name: "みんなでTier表",
-    category: "web",
+    category: "game",
     emoji: "🏆",
     size: "",
     bg: "img/bg/gametier.webp",
@@ -184,7 +184,7 @@ const APPS = [
   },
   {
     name: "ヨミベット",
-    category: "web",
+    category: "game",
     emoji: "🎰",
     icon: "img/icons/yomibet.webp",
     size: "",
@@ -212,7 +212,7 @@ const APPS = [
   },
   {
     name: "情緒婚活",
-    category: "web",
+    category: "shindan",
     emoji: "📋",
     icon: "img/icons/jocho.webp",
     iconShape: "glyph",
@@ -228,7 +228,7 @@ const APPS = [
   /* ---------- 2026年7月 ---------- */
   {
     name: "ダイスダービー",
-    category: "web",
+    category: "game",
     emoji: "🏇",
     size: "",
     bg: "img/bg/dicederby.webp",
@@ -243,7 +243,7 @@ const APPS = [
   },
   {
     name: "ウラヘキ16",
-    category: "web",
+    category: "shindan",
     emoji: "🎭",
     icon: "img/icons/uraheki.webp",
     iconShape: "glyph",
@@ -318,7 +318,7 @@ const APPS = [
   },
   {
     name: "中学学力テストバトル",
-    category: "web",
+    category: "game",
     emoji: "📝",
     size: "",
     bg: "img/bg/exam.webp",
@@ -347,7 +347,7 @@ const APPS = [
   },
   {
     name: "公開スケジュール",
-    category: "web",
+    category: "tool",
     emoji: "📅",
     icon: "img/icons/sharecal.webp",
     size: "",
@@ -360,7 +360,7 @@ const APPS = [
   },
   {
     name: "発表順番ジェネレーター",
-    category: "web",
+    category: "tool",
     emoji: "🎤",
     size: "",
     bg: "img/bg/presenter.webp",
@@ -387,7 +387,7 @@ const APPS = [
   },
   {
     name: "チーム分けツール",
-    category: "web",
+    category: "tool",
     emoji: "👥",
     size: "",
     bg: "img/bg/teamsplit.webp",
@@ -399,7 +399,7 @@ const APPS = [
   },
   {
     name: "2048 ADRENALINE",
-    category: "web",
+    category: "game",
     emoji: "🔢",
     size: "",
     bg: "img/bg/game2048.webp",
@@ -412,7 +412,7 @@ const APPS = [
   },
   {
     name: "ランダム文字抽選",
-    category: "web",
+    category: "tool",
     emoji: "🔤",
     size: "",
     bg: "img/bg/randletter.webp",
@@ -424,7 +424,7 @@ const APPS = [
   },
   {
     name: "席替えアプリ",
-    category: "web",
+    category: "tool",
     emoji: "🪑",
     size: "",
     bg: "img/bg/seatshuffle.webp",
@@ -436,7 +436,7 @@ const APPS = [
   },
   {
     name: "イントロドンカルタ",
-    category: "web",
+    category: "game",
     emoji: "🎵",
     size: "",
     bg: "img/bg/introdon.webp",
@@ -449,7 +449,7 @@ const APPS = [
   },
   {
     name: "王への請願 オンライン対戦",
-    category: "web",
+    category: "game",
     emoji: "🎲",
     size: "",
     bg: "img/bg/dicebattle.webp",
@@ -464,7 +464,7 @@ const APPS = [
   /* ---------- 2026年6月 ---------- */
   {
     name: "サンレンタン",
-    category: "web",
+    category: "game",
     emoji: "🎯",
     size: "",
     bg: "img/bg/sanrentan.webp",
@@ -477,7 +477,7 @@ const APPS = [
   },
   {
     name: "アイデアジェネレーター",
-    category: "web",
+    category: "tool",
     emoji: "💡",
     size: "",
     status: "公開中止中",
@@ -552,7 +552,8 @@ const BG_TONES = ["light", "dark"];
 
 const CATEGORY_LABELS = {
   service: "SERVICE",
-  web: "WEB APP",
+  game: "GAME",
+  shindan: "診断",
   blog: "BLOG",
   video: "YOUTUBE",
   discord: "DISCORD BOT",
