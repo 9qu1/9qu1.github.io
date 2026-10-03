@@ -5,7 +5,7 @@
    ■ 並び順  … 新しく作ったものが上。追加するときは配列の先頭に足す
    ■ カード幅 … 全カード1ブロックで統一。
                 特定のアプリだけ目立たせたいときは size: "wide" で2ブロックにできる
-   ■ category … "web" | "blog" | "video" | "discord" | "tool" | "extension" | "mobile"
+   ■ category … "service" | "web" | "blog" | "video" | "discord" | "tool" | "extension"
    ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中"(省略可)
    ■ note     … 補足の一文(省略可)
    ■ slowStart… true でRender無料枠の起動待ちの注意書きを表示
@@ -71,8 +71,21 @@ const APPS = [
 
   /* ---------- 2026年9月 ---------- */
   {
+    name: "ナカミド",
+    category: "service",
+    emoji: "🪞",
+    icon: "img/icons/nakamido.webp",
+    size: "",
+    bg: "img/bg/nakamido.webp",
+    bgTone: "light",
+    description:
+      "ひとつの角度では測れない「あなたの中身」を、いくつもの診断で測るポータル。ひとりで答える診断のほか、友達に答えてもらう診断や、反応の速さを見るテストもある。登録なしで無料。",
+    tags: ["Cloudflare Workers", "D1", "診断"],
+    links: [{ label: "診断してみる", url: "https://nakamido.com/" }],
+  },
+  {
     name: "トクマス",
-    category: "web",
+    category: "service",
     emoji: "📅",
     icon: "img/icons/tokumasu.webp",
     size: "",
@@ -158,7 +171,7 @@ const APPS = [
   },
   {
     name: "リカイド",
-    category: "web",
+    category: "service",
     emoji: "🐱",
     icon: "img/icons/rikaido.webp",
     size: "",
@@ -244,17 +257,6 @@ const APPS = [
     links: [{ label: "診断してみる", url: "https://uraheki.onrender.com" }],
   },
   {
-    name: "ペット日和",
-    category: "mobile",
-    emoji: "🐾",
-    size: "",
-    status: "開発中",
-    description:
-      "ペットの写真を投稿して交流するSNSアプリ。ペット登録(年齢自動計算)、タグ検索、いいね・なでなで機能つき。iOS/Android両対応でストア公開準備中。",
-    tags: ["Expo", "React Native", "Firebase"],
-    links: [],
-  },
-  {
     name: "ずんだ雑学ラボ（YouTube）",
     category: "video",
     emoji: "🎬",
@@ -313,18 +315,6 @@ const APPS = [
       "朝・大引け・夜の1日3回自動更新される株式市況サイト。AIデイリーの姉妹サイト。",
     tags: ["Node.js", "GitHub Actions"],
     links: [{ label: "読んでみる", url: "https://9qu1.com/invest-daily/" }],
-  },
-  {
-    name: "体重共有アプリ",
-    category: "mobile",
-    emoji: "⚖️",
-    icon: "img/icons/weightshare.webp",
-    size: "",
-    status: "開発中",
-    description:
-      "グループで体重の「変化量」だけを共有できるダイエット応援アプリ。実際の体重は本人にしか見えないから安心。日本語/英語対応。",
-    tags: ["Expo", "React Native", "tRPC"],
-    links: [],
   },
   {
     name: "中学学力テストバトル",
@@ -561,13 +551,13 @@ const ICON_SHAPES = ["glyph", "round"];
 const BG_TONES = ["light", "dark"];
 
 const CATEGORY_LABELS = {
+  service: "SERVICE",
   web: "WEB APP",
   blog: "BLOG",
   video: "YOUTUBE",
   discord: "DISCORD BOT",
   tool: "TOOL",
   extension: "Chrome拡張機能",
-  mobile: "MOBILE",
 };
 
 /* ============================================
