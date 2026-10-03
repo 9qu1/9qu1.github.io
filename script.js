@@ -9,14 +9,16 @@
    ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中"(省略可)
    ■ note     … 補足の一文(省略可)
    ■ slowStart… true でRender無料枠の起動待ちの注意書きを表示
+   ■ bg       … カードの背景に薄く敷く絵(img/ の中・省略可)
    ============================================ */
 const APPS = [
   /* ---------- 2026年10月 ---------- */
   {
-    name: "YouTube Saver",
+    name: "YouTubeダウンローダー",
     category: "extension",
     emoji: "📥",
     size: "",
+    bg: "img/youtube-downloader.svg",
     status: "公開中止中",
     description:
       "YouTubeのプレーヤーにマウスを乗せると出る「保存」ボタンから、動画や音声をワンクリックで保存できるChrome拡張。画質は5種類から選べて、進み具合の表示と終わったときの通知つき。PCのyt-dlpと連携して動く。",
@@ -365,10 +367,11 @@ const APPS = [
     links: [],
   },
   {
-    name: "Twitter Saver",
+    name: "Twitterダウンローダー",
     category: "extension",
     emoji: "💾",
     size: "",
+    bg: "img/twitter-downloader.svg",
     status: "公開中止中",
     description:
       "X(Twitter)のTLに流れてきたツイートを自動保存し、画像・動画もワンクリックで保存できるChrome拡張。広告ツイートの自動非表示機能つき。",
@@ -402,7 +405,7 @@ const CATEGORY_LABELS = {
   web: "WEB APP",
   discord: "DISCORD BOT",
   tool: "TOOL",
-  extension: "EXTENSION",
+  extension: "Chrome拡張機能",
   mobile: "MOBILE",
 };
 
@@ -435,7 +438,8 @@ function render() {
 
   // アプリカード
   for (const app of APPS) {
-    const sizeClass = app.size ? ` card--${app.size}` : "";
+    const sizeClass = (app.size ? ` card--${app.size}` : "") + (app.bg ? " card--bg" : "");
+    const bgStyle = app.bg ? ` style="--card-bg: url('${esc(app.bg)}')"` : "";
     const links = (app.links || [])
       .map(
         (l, i) =>
@@ -443,7 +447,7 @@ function render() {
       )
       .join("");
     html += `
-      <article class="card${sizeClass}" data-category="${app.category}">
+      <article class="card${sizeClass}" data-category="${app.category}"${bgStyle}>
         <div class="card-head">
           <div class="card-icon">${app.emoji}</div>
           <div>

@@ -229,6 +229,21 @@ body {
 
 .card--wide { grid-column: span 2; }
 
+/* 背景の絵(APPS の bg)。右寄せで薄く敷き、文字の多い左側は消していく */
+.card--bg { isolation: isolate; }
+.card--bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--card-bg) right -28px center / auto 118% no-repeat;
+  opacity: 0.16;
+  -webkit-mask-image: linear-gradient(100deg, transparent 26%, #000 76%);
+  mask-image: linear-gradient(100deg, transparent 26%, #000 76%);
+  pointer-events: none;
+}
+:root[data-theme="dark"] .card--bg::before { opacity: 0.26; }
+
 /* 非表示（フィルター） */
 .card.is-hidden { display: none; }
 
