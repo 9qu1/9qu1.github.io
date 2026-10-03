@@ -1,6 +1,9 @@
 # 9qu1.github.io — トップページ
 
-独自ドメイン `9qu1.com` のトップページ(静的HTML1枚)。
+独自ドメイン `9qu1.com` のトップページ。**自作アプリのまとめ（ポートフォリオ）**。
+
+掲載アプリは `script.js` 冒頭の `APPS` 配列で管理する（新しいものを配列の先頭に足す）。
+ローカル確認は `python serve.py`（launch.json の `9qu1-site`・ポート6600）。
 
 ## 役割
 
@@ -9,9 +12,10 @@
 
 | URL | 中身 |
 |---|---|
-| https://9qu1.com/ | このリポジトリ(トップページ) |
+| https://9qu1.com/ | このリポジトリ(アプリのまとめ) |
 | https://9qu1.com/ai-news-daily/ | [ai-news-daily](https://github.com/9qu1/ai-news-daily) — AIデイリー |
 | https://9qu1.com/invest-daily/ | [invest-daily](https://github.com/9qu1/invest-daily) — 投資デイリー |
+| https://9qu1.com/zatsugaku-lab/ | [zatsugaku-lab](https://github.com/9qu1/zatsugaku-lab) — ずんだ雑学ラボ |
 
 各サイトのリポジトリ側は変更不要(相対リンク設計のため)。
 

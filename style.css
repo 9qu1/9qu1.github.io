@@ -1,0 +1,480 @@
+/* ============================================
+   Design tokens
+   ============================================ */
+:root {
+  --bg: #f7f5f1;
+  --card: #ffffff;
+  --text: #1a1d23;
+  --text-sub: #6b7280;
+  --border: rgba(20, 24, 34, 0.08);
+  --shadow: 0 2px 8px rgba(20, 24, 34, 0.04);
+  --shadow-hover: 0 14px 32px rgba(20, 24, 34, 0.12);
+  --accent-grad: linear-gradient(120deg, #ffb000, #ff5a4d);
+  --marker: #ffe1a8;
+  --chip-bg: rgba(20, 24, 34, 0.05);
+  --glass: rgba(247, 245, 241, 0.75);
+  --radius: 20px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12161e;
+  --card: #1b222d;
+  --text: #f2f4f8;
+  --text-sub: #99a1b0;
+  --border: rgba(255, 255, 255, 0.09);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.45);
+  --marker: rgba(255, 176, 0, 0.35);
+  --chip-bg: rgba(255, 255, 255, 0.07);
+  --glass: rgba(18, 22, 30, 0.75);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ============================================
+   プログレスバー
+   ============================================ */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent-grad);
+  z-index: 100;
+}
+
+/* ============================================
+   ヘッダー
+   ============================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo-dot {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.theme-toggle {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s;
+}
+.theme-toggle:hover { transform: scale(1.08); }
+
+/* ============================================
+   ヒーロー
+   ============================================ */
+.hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 88px 24px 48px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.marker {
+  background: linear-gradient(transparent 62%, var(--marker) 62%);
+  padding: 0 0.1em;
+}
+
+.hero-sub {
+  margin-top: 24px;
+  color: var(--text-sub);
+  font-size: 1.05rem;
+}
+
+.sp-only { display: none; }
+
+/* ============================================
+   フィルター
+   ============================================ */
+.filters {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filter-chip {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text-sub);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.filter-chip:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.filter-chip.is-active {
+  background: var(--accent-grad);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(255, 90, 77, 0.35);
+}
+
+/* ============================================
+   ベントーグリッド
+   ============================================ */
+/* 1行=2ブロック。カードは全て1ブロックで、
+   size: "wide" を指定したものだけ2ブロック(全幅)になる */
+.bento {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  grid-auto-flow: dense;
+  gap: 16px;
+}
+
+.card {
+  grid-column: span 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* カードは行の高さまで引き伸ばされる。余った分を1箇所に溜めず
+     各要素の間に均等配分し、不自然な空白が開かないようにする */
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s, translate 0.5s;
+  /* フェードイン初期状態 */
+  opacity: 0;
+  translate: 0 24px;
+}
+
+.card.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card--wide { grid-column: span 2; }
+
+/* 非表示（フィルター） */
+.card.is-hidden { display: none; }
+
+/* --- カード内部 --- */
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card-icon {
+  width: 52px; height: 52px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  background: var(--chip-bg);
+}
+
+
+.card-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.card-status {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-left: 6px;
+  border: 1px solid transparent;
+}
+
+/* 開発中 — 進行中を示す琥珀 */
+.card-status--wip {
+  color: #b45309;
+  background: rgba(255, 176, 0, 0.14);
+  border-color: rgba(255, 176, 0, 0.45);
+}
+:root[data-theme="dark"] .card-status--wip { color: #fbbf24; }
+
+/* R-18 — 注意を促す赤 */
+.card-status--r18 {
+  color: #be123c;
+  background: rgba(244, 63, 94, 0.12);
+  border-color: rgba(244, 63, 94, 0.45);
+}
+:root[data-theme="dark"] .card-status--r18 { color: #fb7185; }
+
+/* 公開中止中 / 限定公開 — 主張しないグレー */
+.card-status--muted {
+  color: var(--text-sub);
+  background: var(--chip-bg);
+  border-color: var(--border);
+}
+
+.card-note {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--chip-bg);
+  border-left: 3px solid var(--border);
+}
+
+.badge-web       { background: linear-gradient(120deg, #38bdf8, #2563eb); }
+.badge-discord   { background: linear-gradient(120deg, #818cf8, #5865f2); }
+.badge-tool      { background: linear-gradient(120deg, #34d399, #059669); }
+.badge-extension { background: linear-gradient(120deg, #fbbf24, #f59e0b); }
+.badge-mobile    { background: linear-gradient(120deg, #f472b6, #ec4899); }
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.card-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  color: var(--text-sub);
+}
+
+/* 無料枠のスリープ復帰待ちを事前に伝える一文 */
+.card-wake {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  opacity: 0.85;
+}
+
+.card-wake::before {
+  content: "⏳ ";
+}
+
+.card-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.card-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent-grad);
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 90, 77, 0.4);
+}
+
+.card-link--ghost {
+  background: transparent;
+  color: var(--text-sub);
+  border: 1px solid var(--border);
+}
+.card-link--ghost:hover { box-shadow: var(--shadow-hover); }
+
+/* --- 統計タイル --- */
+.card--stats {
+  background: var(--accent-grad);
+  border: none;
+  color: #fff;
+  justify-content: center;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: 8px;
+}
+
+.stat-num {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   フッター / トップへ戻る
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--text-sub);
+  font-size: 0.85rem;
+}
+
+/* フッターの行き先リンク（配下のサイトと規約ページ） */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin-bottom: 12px;
+}
+
+.footer-nav a {
+  color: var(--text-sub);
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.to-top {
+  position: fixed;
+  right: 24px; bottom: 24px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-grad);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 90, 77, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+  z-index: 60;
+}
+
+.to-top.is-shown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.to-top:hover { transform: translateY(-3px); }
+
+/* ============================================
+   レスポンシブ
+   ============================================ */
+@media (max-width: 620px) {
+  /* スマホは1列。全カードが同じ幅になる */
+  .bento { grid-template-columns: 1fr; gap: 14px; }
+  .card, .card--wide { grid-column: span 1; }
+  .hero { padding-top: 56px; }
+  .sp-only { display: inline; }
+}
+
+/* アニメーションを減らす設定のユーザーへ配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .card { opacity: 1; translate: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
