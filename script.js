@@ -14,6 +14,16 @@
 const APPS = [
   /* ---------- 2026年10月 ---------- */
   {
+    name: "アマヤドリ",
+    category: "web",
+    emoji: "🌧️",
+    size: "",
+    description:
+      "雨・焚き火・タイピング・ノートと鉛筆の音を流しながら、ポモドーロタイマーで集中できる部屋。窓の雨や湯気、暖炉の火が少しずつ動く夜の部屋の絵つき。登録なしで無料。",
+    tags: ["JavaScript", "環境音", "ポモドーロ"],
+    links: [{ label: "使ってみる", url: "https://9qu1.com/amayadori/" }],
+  },
+  {
     name: "YouTubeダウンローダー",
     category: "extension",
     emoji: "📥",
