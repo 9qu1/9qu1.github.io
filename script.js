@@ -463,18 +463,6 @@ const APPS = [
     links: [{ label: "遊んでみる", url: "https://sanrentan-l25f.onrender.com" }],
   },
   {
-    name: "アイデアジェネレーター",
-    category: "tool",
-    emoji: "💡",
-    size: "",
-    status: "公開中止中",
-    description:
-      "質問に答えていくだけで思考が枝分かれして広がる、質問形式のマインドマップ作成ツール。",
-    note: "思うような使い心地にならなかったため公開を見送っています。",
-    tags: ["HTML", "JavaScript"],
-    links: [],
-  },
-  {
     name: "Among Us AI探偵Bot",
     category: "discord",
     emoji: "🕵️",
