@@ -495,3 +495,12 @@ body {
   .card { opacity: 1; translate: none; transition: none; }
   html { scroll-behavior: auto; }
 }
+
+/* いちばん上に固定して目立たせるカード（APPS の size: "featured"）
+   件数のタイルより上に出し、横いっぱい・枠をアクセントの色に */
+.card--featured {
+  grid-column: 1 / -1;
+  order: -1;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--card), var(--card)) padding-box, var(--accent-grad) border-box;
+}
