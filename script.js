@@ -710,7 +710,9 @@ document.getElementById("filters").addEventListener("click", (e) => {
   const filter = btn.dataset.filter;
   grid.querySelectorAll(".card").forEach((card) => {
     const cat = card.dataset.category;
-    const show = filter === "all" || cat === filter || cat === "all";
+    // size: "featured" のカード（くぁくぁの予定）は、どのカテゴリを選んでも出す
+    const show =
+      filter === "all" || cat === filter || cat === "all" || card.classList.contains("card--featured");
     card.classList.toggle("is-hidden", !show);
     if (show) card.classList.add("is-visible");
   });
