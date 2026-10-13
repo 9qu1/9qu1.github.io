@@ -41,6 +41,21 @@ const APPS = [
 
   /* ---------- 2026年10月 ---------- */
   {
+    name: "クニトリ",
+    category: "game",
+    emoji: "🏰",
+    icon: "img/icons/kunitori.webp",
+    size: "",
+    bg: "img/bg/kunitori.webp",
+    bgTone: "light",
+    status: "デモ版",
+    description:
+      "みんなでひとつの大陸を取り合う陣取りゲーム。5分ごとに国が自動で広がり、寝ている間も領地が増えたり取られたりする。行動力で進軍・要塞・徴兵、合言葉で同盟も組める。",
+    note: "デモ版です。内容やバランスは変わることがあり、世界は予告なく作り直すことがあります。",
+    tags: ["Cloudflare Workers", "Durable Objects", "陣取り"],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/kunitori/" }],
+  },
+  {
     name: "ウラヨミ",
     category: "game",
     emoji: "👁️",
