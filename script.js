@@ -41,6 +41,21 @@ const APPS = [
 
   /* ---------- 2026年10月 ---------- */
   {
+    name: "ピクペット",
+    category: "game",
+    emoji: "🌱",
+    icon: "img/icons/pikupet.webp",
+    size: "",
+    bg: "img/bg/pikupet.webp",
+    bgTone: "light",
+    status: "デモ版",
+    description:
+      "ドット絵のペットを育てるWebゲーム。ごはん・ミニゲーム・おそうじでお世話すると姿が変わっていく。リンクを送れば、友だちも登録なしでごはんやなでなでをしてくれる。",
+    note: "デモ版です。正式に公開するときは、育てたペットをそのまま引き継ぐ予定です。",
+    tags: ["Cloudflare Workers", "D1", "育成"],
+    links: [{ label: "遊んでみる", url: "https://pikupet.nakamido.workers.dev/" }],
+  },
+  {
     name: "クニトリ",
     category: "game",
     emoji: "🏰",
