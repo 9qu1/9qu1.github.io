@@ -41,6 +41,20 @@ const APPS = [
 
   /* ---------- 2026年10月 ---------- */
   {
+    name: "ウラヨミ",
+    category: "game",
+    emoji: "👁️",
+    icon: "img/icons/urayomi.webp",
+    size: "",
+    bg: "img/bg/urayomi.webp",
+    bgTone: "dark",
+    description:
+      "相手の裏を読むオンラインパーティーゲーム3本立て。大喜利の答えを狙った順位にねじ込む「それ、何位のつもり？」、全員で1台の車を動かす「みんなでハンドル」、屋台の仕入れを読み合う「ピッタリ閉店」。スマホで3〜8人。",
+    tags: ["Node.js", "Socket.IO", "オンライン対戦"],
+    slowStart: true,
+    links: [{ label: "遊んでみる", url: "https://urayomi.onrender.com" }],
+  },
+  {
     name: "ドコマデ列車",
     category: "game",
     emoji: "🚂",
@@ -285,7 +299,6 @@ const APPS = [
     bg: "img/bg/dicederby.webp",
     bgTone: "dark",
     bgPos: "center 70%",
-    bgZoom: 1.5,
     description:
       "サイコロの出目で9頭の馬が走る、リアルタイム競馬ベッティング。走っている最中に賭けるのがルールで、3頭が締切ラインを越えたら受付終了。毎レース選ぶ能力カード10種、一騎打ちのマッチレース、勝率のライブ表示つき。最大8人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
@@ -376,7 +389,6 @@ const APPS = [
     bg: "img/bg/exam.webp",
     bgTone: "dark",
     bgPos: "center bottom",
-    bgZoom: 1.5,
     description:
       "友達とリアルタイムで競う5教科クイズ。ルームコードで参加して制限時間内に回答、最下位から発表されるランキング演出つき。全500問収録。",
     tags: ["React", "tRPC", "SQLite"],
