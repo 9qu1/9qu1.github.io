@@ -6,7 +6,7 @@
    ■ カード幅 … 全カード1ブロックで統一。
                 特定のアプリだけ目立たせたいときは size: "wide" で2ブロックにできる
    ■ category … "service" | "game" | "shindan" | "tool" | "blog" | "video" | "discord" | "extension"
-   ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中" | "自分専用"(省略可)
+   ■ status   … "R-18" | "開発中" | "デモ版" | "限定公開" | "公開中止中" | "自分専用"(省略可)
    ■ note     … 補足の一文(省略可)
    ■ slowStart… true でRender無料枠の起動待ちの注意書きを表示
    ■ icon     … 絵文字の代わりに出すアイコン画像(img/icons/ の中・省略可。無ければ emoji)
@@ -40,6 +40,23 @@ const APPS = [
   },
 
   /* ---------- 2026年10月 ---------- */
+  {
+    name: "ドコマデ列車",
+    category: "game",
+    emoji: "🚂",
+    icon: "img/icons/dokomade.webp",
+    size: "",
+    bg: "img/bg/dokomade.webp",
+    bgTone: "dark",
+    bgPos: "40% 62%",
+    bgZoom: 1.3,
+    status: "デモ版",
+    description:
+      "放置しても走りつづける魔法の列車のドットRPG。タップで攻撃し、車両を連結し、ド派手な召喚で部品を集めて、どこまで行けるかを全国ランキングで競う。",
+    note: "デモ版です。内容やバランスは変わることがあります。",
+    tags: ["JavaScript", "放置ゲーム", "ドット絵"],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/dokomade/" }],
+  },
   {
     name: "浮気許せる度診断",
     category: "shindan",
@@ -560,6 +577,7 @@ const APPS = [
 const STATUS_TONES = {
   "R-18": "r18",
   開発中: "wip",
+  デモ版: "wip",
   限定公開: "muted",
   公開中止中: "muted",
   自分専用: "muted",
