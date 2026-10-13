@@ -47,7 +47,7 @@ const APPS = [
     icon: "img/icons/urayomi.webp",
     size: "",
     bg: "img/bg/urayomi.webp",
-    bgTone: "dark",
+    bgTone: "light",
     description:
       "相手の裏を読むオンラインパーティーゲーム3本立て。大喜利の答えを狙った順位にねじ込む「それ、何位のつもり？」、全員で1台の車を動かす「みんなでハンドル」、屋台の仕入れを読み合う「ピッタリ閉店」。スマホで3〜8人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
