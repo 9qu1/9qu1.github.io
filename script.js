@@ -6,7 +6,7 @@
    ■ カード幅 … 全カード1ブロックで統一。
                 特定のアプリだけ目立たせたいときは size: "wide" で2ブロックにできる
    ■ category … "service" | "game" | "shindan" | "tool" | "blog" | "video" | "discord" | "extension"
-   ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中"(省略可)
+   ■ status   … "R-18" | "開発中" | "限定公開" | "公開中止中" | "自分専用"(省略可)
    ■ note     … 補足の一文(省略可)
    ■ slowStart… true でRender無料枠の起動待ちの注意書きを表示
    ■ icon     … 絵文字の代わりに出すアイコン画像(img/icons/ の中・省略可。無ければ emoji)
@@ -86,6 +86,21 @@ const APPS = [
   },
 
   /* ---------- 2026年9月 ---------- */
+  {
+    name: "わんおな",
+    category: "tool",
+    emoji: "👋",
+    icon: "img/icons/wanona.webp",
+    size: "",
+    bg: "img/bg/wanona.webp",
+    bgTone: "light",
+    status: "自分専用",
+    description:
+      "予定・やること・ノートをひとつにまとめたNotion風ノート。カレンダー・ボード・表・通知つきで、スマホのホーム画面からも使える。Claudeとも同じ予定を読み書きして、いっしょに管理している。",
+    note: "個人利用のため、一般公開はしていません。",
+    tags: ["React", "Firebase", "PWA"],
+    links: [],
+  },
   {
     name: "ナカミド",
     category: "service",
@@ -547,6 +562,7 @@ const STATUS_TONES = {
   開発中: "wip",
   限定公開: "muted",
   公開中止中: "muted",
+  自分専用: "muted",
 };
 
 /* APPS の iconShape・bgTone に書ける値 */
