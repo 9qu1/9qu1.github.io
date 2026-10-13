@@ -41,6 +41,22 @@ const APPS = [
 
   /* ---------- 2026年10月 ---------- */
   {
+    name: "浮気許せる度診断",
+    category: "shindan",
+    emoji: "🚦",
+    icon: "img/icons/uwakiline.webp",
+    size: "",
+    bg: "img/bg/uwakiline.webp",
+    bgTone: "light",
+    bgPos: "center 42%",
+    bgZoom: 1.6,
+    description:
+      "恋人がこの行動をしたら、アウト？モヤる？セーフ？ 30問の3択で、浮気の「許せる度」と12タイプがわかる診断。同じ30問で自分の本音を測る診断や、友達との当てっこ、みんなの統計つき。",
+    note: "10月31日までの期間限定公開です。11月1日に集めたデータはすべて消します。",
+    tags: ["JavaScript", "Cloudflare D1", "診断"],
+    links: [{ label: "診断してみる", url: "https://9qu1.com/uwaki-line/" }],
+  },
+  {
     name: "アマヤドリ",
     category: "service",
     emoji: "🌧️",
