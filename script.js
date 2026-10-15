@@ -41,6 +41,20 @@ const APPS = [
 
   /* ---------- 2026年10月 ---------- */
   {
+    name: "イキテミタ",
+    category: "game",
+    emoji: "🌱",
+    icon: "img/icons/ikitemita.webp",
+    size: "",
+    bg: "img/bg/ikitemita.webp",
+    bgTone: "light",
+    bgPos: "right center",
+    description:
+      "ボタンを押すと、世界のどこかの ひと・どうぶつ・むし にうまれて、その一生を神さまの目線でながめるだけ。100の一生を同時に、最大100倍速。最後にまとめの画像も作れる。",
+    tags: ["JavaScript", "Canvas", "人生シミュレーション"],
+    links: [{ label: "うまれてみる", url: "https://9qu1.com/ikitemita/" }],
+  },
+  {
     name: "ピクペット",
     category: "game",
     emoji: "🌱",
