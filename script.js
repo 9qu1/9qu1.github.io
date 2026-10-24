@@ -50,7 +50,7 @@ const APPS = [
     bgTone: "light",
     bgPos: "right center",
     description:
-      "みんなで同じお題の絵を描くのに、人狼だけ似ているけど違うお題（クレープと春巻きなど）。絵を見せ合って話し合い、投票でひとりだけ違う人を探す。お題は9ジャンル931問。スマホで3〜12人。",
+      "みんなで同じお題の絵を描くのに、人狼だけ似ているけど違うお題（クレープと春巻きなど）。絵を見せ合って話し合い、投票で違うお題の人を探す。人狼は1〜3人。スマホやPCで3〜20人。",
     tags: ["Node.js", "Socket.IO", "お絵描き"],
     slowStart: true,
     links: [{ label: "遊んでみる", url: "https://oekaki-jinro.onrender.com" }],
