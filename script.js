@@ -41,6 +41,20 @@ const APPS = [
 
   /* ---------- 2026年10月 ---------- */
   {
+    name: "AutoMute",
+    category: "discord",
+    emoji: "🤐",
+    icon: "img/icons/automute.webp",
+    size: "",
+    bg: "img/bg/automute.webp",
+    bgTone: "dark",
+    bgPos: "right center",
+    description:
+      "Among Us の試合に合わせて、Discord のボイスチャンネルを自動でミュートする Bot。タスク中は静かに、会議になったら話せる。15人でも速く、誰でも自分のサーバーに導入できる（許可制）。",
+    tags: ["Python", "discord.py", "Among Us"],
+    links: [{ label: "公式サイト", url: "https://9qu1.com/automute/" }],
+  },
+  {
     name: "お絵描き人狼",
     category: "game",
     emoji: "🐺",
