@@ -39,6 +39,64 @@ const APPS = [
     links: [{ label: "予定を見る", url: "https://9qu1.com/schedule/" }],
   },
 
+  /* ---------- 2026年11月 ---------- */
+  {
+    name: "民意の人生",
+    category: "game",
+    emoji: "🗳️",
+    icon: "img/icons/min-i-jinsei.webp",
+    size: "",
+    bg: "img/bg/min-i-jinsei.webp",
+    bgTone: "light",
+    bgPos: "right center",
+    description:
+      "ひとりの人生を、見ている人みんなの多数決で決める。名前・進路・初恋・結婚・最期の言葉まで、30秒ごとに投票。ときどき本人が民意に逆らう。亡くなると歴代の人生に残る。",
+    tags: ["Cloudflare Workers", "Durable Objects", "多数決"],
+    links: [{ label: "人生を決めに行く", url: "https://9qu1.com/min-i/" }],
+  },
+  {
+    name: "ツギドコ",
+    category: "game",
+    emoji: "🚌",
+    icon: "img/icons/tsugidoko.webp",
+    size: "",
+    bg: "img/bg/tsugidoko.webp",
+    bgTone: "light",
+    bgPos: "right center",
+    description:
+      "1台のバスが日本の市区町村をめぐる旅。次の行き先は、見ている人みんなの投票で決まる。着いた町の地図・写真・説明つき。配信で流すための大きい画面もある。",
+    tags: ["Cloudflare Workers", "地理院地図", "投票"],
+    links: [{ label: "旅に参加する", url: "https://9qu1.com/tsugidoko/" }],
+  },
+  {
+    name: "みんなで鍵解除",
+    category: "game",
+    emoji: "🔐",
+    icon: "img/icons/kagi-kaijo.webp",
+    size: "",
+    bg: "img/bg/kagi-kaijo.webp",
+    bgTone: "dark",
+    bgPos: "right center",
+    description:
+      "みんなで番号を試して、ダイヤル錠を開ける。だれかが試した番号は全員の画面で選べなくなる。1桁から始まり、開くたびに1桁ずつ増える。みんなで何桁まで開けられるか。",
+    tags: ["Cloudflare Workers", "Durable Objects", "みんなで協力"],
+    links: [{ label: "鍵を開けに行く", url: "https://9qu1.com/kagi/" }],
+  },
+  {
+    name: "22時22分22秒",
+    category: "game",
+    emoji: "⏰",
+    icon: "img/icons/222222.webp",
+    size: "",
+    bg: "img/bg/222222.webp",
+    bgTone: "dark",
+    bgPos: "right center",
+    description:
+      "毎日22時22分22秒に、ボタンを押すだけ。押したあと5秒の計測があって、その瞬間に同時に押した人数が出る。",
+    tags: ["Cloudflare Workers", "毎日", "時計"],
+    links: [{ label: "押しに行く", url: "https://9qu1.com/222222/" }],
+  },
+
   /* ---------- 2026年10月 ---------- */
   {
     name: "AutoMute",
