@@ -332,7 +332,7 @@ const APPS = [
     description:
       "12の2択に答えて9つのダイスを振るだけで、クトゥルフ神話TRPG（7版）の探索者が完成。職業・能力値・技能まで自動で配分し、カード画像の保存とココフォリアの駒の出力に対応。非公式のファンツール。",
     tags: ["JavaScript", "Canvas", "TRPG"],
-    links: [{ label: "つくってみる", url: "https://coc-maker.onrender.com/" }],
+    links: [{ label: "つくってみる", url: "https://9qu1.com/coc-maker/" }],
   },
   {
     name: "みんなでTier表",
@@ -401,7 +401,7 @@ const APPS = [
     description:
       "32問で「婚活プロフィールカード」と「取扱説明書」を発行する診断サイト。情緒年収やメンタル貯金などの架空スペックつき。気になる人に送れば二人の相性証明書、友達に送れば他己診断の結果が出る。画像で保存可能。",
     tags: ["Node.js", "Canvas", "診断"],
-    links: [{ label: "診断してみる", url: "https://jocho-konkatsu.onrender.com" }],
+    links: [{ label: "診断してみる", url: "https://jocho-konkatsu.pages.dev/" }],
   },
 
   /* ---------- 2026年7月 ---------- */
@@ -434,7 +434,7 @@ const APPS = [
     description:
       "40問の質問に答えて、隠れた性癖を16タイプに判定する診断サイト。回答はサーバーに送らず全部ブラウザ内で処理するプライバシー設計。タイプ別の解説と相性診断つき、全機能無料。",
     tags: ["Node.js", "Firestore", "診断"],
-    links: [{ label: "診断してみる", url: "https://uraheki.onrender.com" }],
+    links: [{ label: "診断してみる", url: "https://uraheki.pages.dev/" }],
   },
   {
     name: "ずんだ雑学ラボ（YouTube）",
@@ -524,7 +524,7 @@ const APPS = [
     description:
       "Dead by Daylightで遭遇したキラーと勝敗を記録する非公式ファンツール。全43キラー対応、脱出率も自動集計。データはブラウザ内に保存。",
     tags: ["JavaScript", "localStorage"],
-    links: [{ label: "使ってみる", url: "https://dbd-killer-counter.onrender.com" }],
+    links: [{ label: "使ってみる", url: "https://9qu1.com/dbd-killer-counter/" }],
   },
   {
     name: "発表順番ジェネレーター",
@@ -552,7 +552,7 @@ const APPS = [
     description:
       "Discordサーバーを盛り上げる無料の多機能Bot。ゲーム募集の管理、VC滞在時間の記録、サーバーログ、AIへの質問応答までこなす。24時間稼働中で、誰でも自分のサーバーに導入できる。",
     tags: ["Node.js", "discord.js", "PostgreSQL", "Claude API"],
-    links: [{ label: "公式サイト", url: "https://qaqa-ih4o.onrender.com" }],
+    links: [{ label: "公式サイト", url: "https://9qu1.com/qaqa/" }],
   },
   {
     name: "チーム分けツール",
