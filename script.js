@@ -593,7 +593,7 @@ const APPS = [
       "定番パズル「2048」にオンラインランキング(全期間/週間/日間)を搭載。スコア登録は名前だけでOK、世界中のプレイヤーと競える。",
     tags: ["React", "tRPC", "Firestore"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://two048-adrenaline.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/2048-adrenaline/" }],
   },
   {
     name: "ランダム文字抽選",
