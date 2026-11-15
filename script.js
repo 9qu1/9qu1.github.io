@@ -433,7 +433,7 @@ const APPS = [
       "サイコロの出目で9頭の馬が走る、リアルタイム競馬ベッティング。走っている最中に賭けるのがルールで、3頭が締切ラインを越えたら受付終了。毎レース選ぶ能力カード10種、一騎打ちのマッチレース、勝率のライブ表示つき。最大8人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://dice-derby.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/dice-derby/" }],
   },
   {
     name: "ウラヘキ16",
@@ -524,7 +524,7 @@ const APPS = [
       "友達とリアルタイムで競う5教科クイズ。ルームコードで参加して制限時間内に回答、最下位から発表されるランキング演出つき。全500問収録。",
     tags: ["React", "tRPC", "SQLite"],
     slowStart: true,
-    links: [{ label: "挑戦してみる", url: "https://exam-platform-ufa8.onrender.com" }],
+    links: [{ label: "挑戦してみる", url: "https://9qu1.com/exam-platform/" }],
   },
   {
     name: "DBDキラー遭遇カウンター",
@@ -647,7 +647,7 @@ const APPS = [
       "ボードゲーム「王への請願(To Court the King)」をブラウザでオンライン対戦できるようにしたWebアプリ。友達が別々の端末からリアルタイムに対戦できる。",
     tags: ["Node.js", "Socket.IO"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://dice-battle-g25r.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/dice-battle/" }],
   },
 
   /* ---------- 2026年6月 ---------- */
