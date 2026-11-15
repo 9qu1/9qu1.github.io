@@ -299,7 +299,7 @@ const APPS = [
       "むしめがねをかざすと、みんなの頭の上に数字が浮かぶオンラインパーティーゲーム。数字の持ち主当て・自己申告とのズレ・ピタリ予想・数字だけでお題を当てる親当ての4モード。お題は全年齢とちょい下世話の2パック。スマホで3〜12人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://scanan-wzbe.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/scanan/" }],
   },
 
   /* ---------- 2026年8月 ---------- */
