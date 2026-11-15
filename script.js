@@ -633,7 +633,7 @@ const APPS = [
       "YouTubeの曲イントロを流して、正しい札を早い者勝ちでタップするオンラインカルタ。問題セットはURLを貼るだけで作れて、出題数を選ぶと毎回ちがう曲が抽選されるので同じセットで何度でも遊べる。スマホからQRコードで参加。",
     tags: ["Node.js", "Socket.IO", "YouTube API"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://intro-don-karuta.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/intro-don-karuta/" }],
   },
   {
     name: "王への請願 オンライン対戦",
