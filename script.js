@@ -41,6 +41,20 @@ const APPS = [
 
   /* ---------- 2026年11月 ---------- */
   {
+    name: "ウツシエ",
+    category: "game",
+    emoji: "🎨",
+    icon: "img/icons/utsushie.webp",
+    size: "",
+    bg: "img/bg/utsushie.webp",
+    bgTone: "light",
+    bgPos: "right center",
+    description:
+      "お手本の絵をみんなで同時にまねして描いて、似ている順にランキング。インク少なめ・直線だけ・5秒だけ見えるなど、毎試合ちがう縛りがある。判定する人数も試合ごとに決められる。3〜12人。",
+    tags: ["Cloudflare Workers", "Durable Objects", "お絵描き"],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/utsushie/" }],
+  },
+  {
     name: "民意の人生",
     category: "game",
     emoji: "🗳️",
