@@ -360,7 +360,7 @@ const APPS = [
       "「どっちが上？」の2択投票をみんなで集めて、S〜DのTier表を自動で作る集合知アプリ。知らない人は「わからない」で飛ばせて、順位はイロレーティングで計算。お題ごとにTier表を作ってURLで共有できる。",
     tags: ["Node.js", "Firestore", "投票"],
     slowStart: true,
-    links: [{ label: "投票してみる", url: "https://game-tier-fn4u.onrender.com/" }],
+    links: [{ label: "投票してみる", url: "https://9qu1.com/game-tier/" }],
   },
   {
     name: "リカイド",
