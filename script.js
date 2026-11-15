@@ -302,7 +302,7 @@ const APPS = [
       "チームごとに「数字で答えられるお題」を出し、全員の回答の合計をゴール（最初は100）にピタッと近づけたチームが勝つ。お題を考える人は毎回ランダム、巡の数とゴールはロビーで変えられる。「0」や「20以上」の回答が集まるとペナルティ+20。2〜4チーム×2〜6人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://one00pita.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/100pita/" }],
   },
   {
     name: "コトバト",
