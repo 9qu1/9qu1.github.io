@@ -663,7 +663,7 @@ const APPS = [
       "お題に対する相手の答えのランキングを予想して当てる、リアルタイム価値観当てパーティゲーム。競馬の三連単がモチーフで、部屋コードを共有するだけで全員スマホから参加OK。ボードスキン切替やお題120問以上を収録。",
     tags: ["React", "Socket.IO", "Firebase", "Render"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://sanrentan-l25f.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/sanrentan/" }],
   },
   {
     name: "Among Us AI探偵Bot",
