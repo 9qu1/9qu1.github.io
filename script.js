@@ -154,7 +154,7 @@ const APPS = [
       "ドット絵のペットを育てるWebゲーム。ごはん・ミニゲーム・おそうじでお世話すると姿が変わっていく。リンクを送れば、友だちも登録なしでごはんやなでなでをしてくれる。",
     note: "デモ版です。正式に公開するときは、育てたペットをそのまま引き継ぐ予定です。",
     tags: ["Cloudflare Workers", "D1", "育成"],
-    links: [{ label: "遊んでみる", url: "https://pikupet.nakamido.workers.dev/" }],
+    links: [{ label: "遊んでみる", url: "https://pikupet.9qu1.com/" }],
   },
   {
     name: "クニトリ",
@@ -317,7 +317,7 @@ const APPS = [
       "親だけが知る「ヒミツのキジュン」をめぐるワードバトル大喜利。子が自由にワードを出し、親が軍配を上げて王者を決める。勝敗のクセからキジュンを見抜き、決戦で優勝ワードを出した人の勝ち。お題125問・3〜16人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://kotobato.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/kotobato/" }],
   },
   {
     name: "探索者メーカー",
