@@ -139,7 +139,7 @@ const APPS = [
       "みんなで同じお題の絵を描くのに、人狼だけ似ているけど違うお題（クレープと春巻きなど）。絵を見せ合って話し合い、投票で違うお題の人を探す。人狼は1〜3人。スマホやPCで3〜20人。",
     tags: ["Node.js", "Socket.IO", "お絵描き"],
     slowStart: true,
-    links: [{ label: "遊んでみる", url: "https://oekaki-jinro.onrender.com" }],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/oekaki-jinro/" }],
   },
   {
     name: "イキテミタ",
@@ -551,7 +551,7 @@ const APPS = [
     description:
       "発表の順番をランダムに決めるジェネレーター。2〜100人対応、シャッフルアニメーションつき。",
     tags: ["React", "framer-motion"],
-    links: [{ label: "使ってみる", url: "https://random-presenter.onrender.com" }],
+    links: [{ label: "使ってみる", url: "https://9qu1.com/random-presenter/" }],
   },
   {
     name: "くあぼっと",
@@ -579,7 +579,7 @@ const APPS = [
     description:
       "メンバーを一括入力して2〜8チームにランダム分け。再シャッフルも結果コピーもワンクリック。",
     tags: ["React", "Tailwind"],
-    links: [{ label: "使ってみる", url: "https://team-splitter-gjao.onrender.com" }],
+    links: [{ label: "使ってみる", url: "https://9qu1.com/team-splitter/" }],
   },
   {
     name: "2048 ADRENALINE",
@@ -606,7 +606,7 @@ const APPS = [
     description:
       "アルファベットや数字を範囲指定してランダムに1つ抽選するアプリ。ブルータリズムデザインが目印。",
     tags: ["React", "Vite"],
-    links: [{ label: "使ってみる", url: "https://random-letter-ukq5.onrender.com" }],
+    links: [{ label: "使ってみる", url: "https://9qu1.com/random-letter/" }],
   },
   {
     name: "席替えアプリ",
@@ -619,7 +619,7 @@ const APPS = [
     description:
       "クラスや職場の席替えをランダムに決めるアプリ。座席レイアウトを作ってメンバーを流し込むだけ。",
     tags: ["React", "Vite", "Tailwind"],
-    links: [{ label: "使ってみる", url: "https://seat-shuffle-b0gb.onrender.com" }],
+    links: [{ label: "使ってみる", url: "https://9qu1.com/seat-shuffle/" }],
   },
   {
     name: "イントロドンカルタ",
