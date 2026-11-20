@@ -138,7 +138,6 @@ const APPS = [
     description:
       "みんなで同じお題の絵を描くのに、人狼だけ似ているけど違うお題（クレープと春巻きなど）。絵を見せ合って話し合い、投票で違うお題の人を探す。人狼は1〜3人。スマホやPCで3〜20人。",
     tags: ["Node.js", "Socket.IO", "お絵描き"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/oekaki-jinro/" }],
   },
   {
@@ -196,7 +195,6 @@ const APPS = [
     description:
       "相手の裏を読むオンラインパーティーゲーム3本立て。大喜利の答えを狙った順位にねじ込む「それ、何位のつもり？」、全員で1台の車を動かす「みんなでハンドル」、屋台の仕入れを読み合う「ピッタリ閉店」。スマホで3〜8人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/urayomi/" }],
   },
   {
@@ -298,7 +296,6 @@ const APPS = [
     description:
       "むしめがねをかざすと、みんなの頭の上に数字が浮かぶオンラインパーティーゲーム。数字の持ち主当て・自己申告とのズレ・ピタリ予想・数字だけでお題を当てる親当ての4モード。お題は全年齢とちょい下世話の2パック。スマホで3〜12人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/scanan/" }],
   },
 
@@ -315,7 +312,6 @@ const APPS = [
     description:
       "チームごとに「数字で答えられるお題」を出し、全員の回答の合計をゴール（最初は100）にピタッと近づけたチームが勝つ。お題を考える人は毎回ランダム、巡の数とゴールはロビーで変えられる。「0」や「20以上」の回答が集まるとペナルティ+20。2〜4チーム×2〜6人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/100pita/" }],
   },
   {
@@ -330,7 +326,6 @@ const APPS = [
     description:
       "親だけが知る「ヒミツのキジュン」をめぐるワードバトル大喜利。子が自由にワードを出し、親が軍配を上げて王者を決める。勝敗のクセからキジュンを見抜き、決戦で優勝ワードを出した人の勝ち。お題125問・3〜16人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/kotobato/" }],
   },
   {
@@ -359,7 +354,6 @@ const APPS = [
     description:
       "「どっちが上？」の2択投票をみんなで集めて、S〜DのTier表を自動で作る集合知アプリ。知らない人は「わからない」で飛ばせて、順位はイロレーティングで計算。お題ごとにTier表を作ってURLで共有できる。",
     tags: ["Node.js", "Firestore", "投票"],
-    slowStart: true,
     links: [{ label: "投票してみる", url: "https://9qu1.com/game-tier/" }],
   },
   {
@@ -386,7 +380,6 @@ const APPS = [
     description:
       "回答者が5問の二択に答えると、コマがピラミッドを1段ずつ落ちていく。全員が「どのマスを通るか」にチップを賭ける価値観ベッティング。経路が合流するので真ん中は堅く、端まで読み切れば最高8倍。回答者も「自分を当ててくる人」を指名して賭ける。お題は恋愛・友情・仕事・日常・究極の選択・R18の6ジャンル350問から毎回ランダムに配置される。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/yomibet/" }],
   },
   {
@@ -432,7 +425,6 @@ const APPS = [
     description:
       "サイコロの出目で9頭の馬が走る、リアルタイム競馬ベッティング。走っている最中に賭けるのがルールで、3頭が締切ラインを越えたら受付終了。毎レース選ぶ能力カード10種、一騎打ちのマッチレース、勝率のライブ表示つき。最大8人。",
     tags: ["Node.js", "Socket.IO", "オンライン対戦"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/dice-derby/" }],
   },
   {
@@ -523,7 +515,6 @@ const APPS = [
     description:
       "友達とリアルタイムで競う5教科クイズ。ルームコードで参加して制限時間内に回答、最下位から発表されるランキング演出つき。全500問収録。",
     tags: ["React", "tRPC", "SQLite"],
-    slowStart: true,
     links: [{ label: "挑戦してみる", url: "https://9qu1.com/exam-platform/" }],
   },
   {
@@ -592,7 +583,6 @@ const APPS = [
     description:
       "定番パズル「2048」にオンラインランキング(全期間/週間/日間)を搭載。スコア登録は名前だけでOK、世界中のプレイヤーと競える。",
     tags: ["React", "tRPC", "Firestore"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/2048-adrenaline/" }],
   },
   {
@@ -632,7 +622,6 @@ const APPS = [
     description:
       "YouTubeの曲イントロを流して、正しい札を早い者勝ちでタップするオンラインカルタ。問題セットはURLを貼るだけで作れて、出題数を選ぶと毎回ちがう曲が抽選されるので同じセットで何度でも遊べる。スマホからQRコードで参加。",
     tags: ["Node.js", "Socket.IO", "YouTube API"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/intro-don-karuta/" }],
   },
   {
@@ -646,7 +635,6 @@ const APPS = [
     description:
       "ボードゲーム「王への請願(To Court the King)」をブラウザでオンライン対戦できるようにしたWebアプリ。友達が別々の端末からリアルタイムに対戦できる。",
     tags: ["Node.js", "Socket.IO"],
-    slowStart: true,
     links: [{ label: "遊んでみる", url: "https://9qu1.com/dice-battle/" }],
   },
 
@@ -661,8 +649,7 @@ const APPS = [
     bgTone: "light",
     description:
       "お題に対する相手の答えのランキングを予想して当てる、リアルタイム価値観当てパーティゲーム。競馬の三連単がモチーフで、部屋コードを共有するだけで全員スマホから参加OK。ボードスキン切替やお題120問以上を収録。",
-    tags: ["React", "Socket.IO", "Firebase", "Render"],
-    slowStart: true,
+    tags: ["React", "Firebase", "Cloudflare"],
     links: [{ label: "遊んでみる", url: "https://9qu1.com/sanrentan/" }],
   },
   {
