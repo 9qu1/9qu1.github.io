@@ -41,6 +41,20 @@ const APPS = [
 
   /* ---------- 2026年11月 ---------- */
   {
+    name: "ユメアワセ",
+    category: "game",
+    emoji: "🕯️",
+    icon: "img/icons/yumeawase.webp",
+    size: "",
+    bg: "img/bg/yumeawase.webp",
+    bgTone: "dark",
+    bgPos: "right center",
+    description:
+      "夢の館で、見えない仲間と同じ部屋に集まる協力推理ゲーム。館の形も仲間の場所も分からないまま、手探りで地図を作り、全員で同じ部屋に集まって一緒に目覚める。館の主は影を操ってじゃまをする（CPU も可）。終わったら全員の動きを再生できる。2〜5人。",
+    tags: ["Cloudflare Workers", "Durable Objects", "協力推理"],
+    links: [{ label: "遊んでみる", url: "https://9qu1.com/yumeawase/" }],
+  },
+  {
     name: "ウツシエ",
     category: "game",
     emoji: "🎨",
