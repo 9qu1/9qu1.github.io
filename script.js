@@ -259,21 +259,6 @@ const APPS = [
 
   /* ---------- 2026年9月 ---------- */
   {
-    name: "わんおな",
-    category: "tool",
-    emoji: "👋",
-    icon: "img/icons/wanona.webp",
-    size: "",
-    bg: "img/bg/wanona.webp",
-    bgTone: "light",
-    status: "自分専用",
-    description:
-      "予定・やること・ノートをひとつにまとめたNotion風ノート。カレンダー・ボード・表・通知つきで、スマホのホーム画面からも使える。Claudeとも同じ予定を読み書きして、いっしょに管理している。",
-    note: "個人利用のため、一般公開はしていません。",
-    tags: ["React", "Firebase", "PWA"],
-    links: [],
-  },
-  {
     name: "ナカミド",
     category: "service",
     emoji: "🪞",
